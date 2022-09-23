@@ -16,7 +16,6 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
     res.cookie('Authorization','utsav642',{
         httpOnly: true,
-        secure: true,
         sameSite: 'none'
     });    
     res.send('Hello World, from express');
