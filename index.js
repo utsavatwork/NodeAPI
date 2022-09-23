@@ -9,9 +9,12 @@ app.use(cors());
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin: http://localhost:9000/login.html');
+
     res.cookie('Authorization','utsav642',{
         httpOnly: true,
-        secure: true
+        secure: true,
+        sameSite: 'none'
     });    
     res.send('Hello World, from express');
 });
